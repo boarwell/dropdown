@@ -1,5 +1,11 @@
 type clickHandler = (child: Dropdown) => void;
 
+/** ドロップダウン全体の状態 */
+type State = { name: 'open'; current: Dropdown } | { name: 'closed' };
+
+/** メインのコンストラクタのプロパティ */
+export type Prop = Readonly<{ trigger: HTMLElement; container: HTMLElement }>;
+
 class Dropdown {
   private trigger: HTMLElement;
   private container: HTMLElement;
@@ -23,10 +29,6 @@ class Dropdown {
     console.log(this.trigger, 'close()');
   }
 }
-
-type State = { name: 'open'; current: Dropdown } | { name: 'closed' };
-
-export type Prop = Readonly<{ trigger: HTMLElement; container: HTMLElement }>;
 
 export class Commander {
   private items: Dropdown[];

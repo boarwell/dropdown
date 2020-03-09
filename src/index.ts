@@ -1,4 +1,5 @@
 import { Commander, Prop } from './lib/main.js';
+import { Accordion, init as accordionInit } from './lib/Accordion.js';
 
 export function init(props?: Readonly<Prop[]>) {
   if (props !== undefined) {
@@ -22,3 +23,5 @@ export function init(props?: Readonly<Prop[]>) {
     new Commander(defaultProps);
   }
 }
+
+export { accordionInit };
